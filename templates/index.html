@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Healthcare Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Medical Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="title">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>AI Healthcare Assistant</span>
+        </div>
+
+        <button id="themeToggle" title="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- CHAT AREA -->
+    <div id="chatbox" class="chatbox">
+        <div class="welcome">
+            <h3>Hello 👋</h3>
+            <p>Describe your symptoms</p>
+            <small>Example: fever, headache, cough</small>
+        </div>
+    </div>
+
+    <!-- INPUT -->
+    <div class="input-area">
+        <input id="msg" placeholder="Type your symptoms..." autocomplete="off">
+        <button onclick="send()">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
