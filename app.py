@@ -8,8 +8,16 @@ import re
 app = Flask(__name__)
 
 # ---------------- LOAD MODEL ----------------
-model = pickle.load(open("model/disease_model.pkl", "rb"))
-mlb = pickle.load(open("model/mlb.pkl", "rb"))
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "model", "disease_model.pkl")
+mlb_path = os.path.join(BASE_DIR, "model", "mlb.pkl")
+
+model = pickle.load(open(model_path, "rb"))
+mlb = pickle.load(open(mlb_path, "rb"))
+
 
 # -------- CLEAN DATASET SYMPTOMS ----------
 def clean_symptom(s):
